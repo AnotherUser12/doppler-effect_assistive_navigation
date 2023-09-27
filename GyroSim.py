@@ -15,5 +15,11 @@ class GyroSim:
     def get_heading(self):
         return self.heading
     
+    def get_desired_heading(self):
+        return self.desired_heading
+    
     def get_delta_heading(self):
-        return self.desired_heading - self.heading
+        delta_heading = self.desired_heading - self.heading
+        delta_heading = (delta_heading + 180) % 360 - 180  # Wrap within -180 to 180 range
+
+        return delta_heading
