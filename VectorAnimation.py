@@ -14,9 +14,10 @@ class VectorAnimation:
         pygame.display.set_caption("Direction  Animation")
     
     def update(self, angle):
+        radians = angle * math.pi/180
         self.screen.fill(self.WHITE)
-        end_x = self.VECTOR_SOURCE[0] + self.ARROW_LENGTH * math.cos(angle)
-        end_y = self.VECTOR_SOURCE[1] + self.ARROW_LENGTH * math.sin(angle)
+        end_x = self.VECTOR_SOURCE[0] + self.ARROW_LENGTH * math.cos(radians)
+        end_y = self.VECTOR_SOURCE[1] + self.ARROW_LENGTH * math.sin(radians)
 
         # Draw the arrow
         pygame.draw.line(self.screen, (0, 0, 0), self.VECTOR_SOURCE, (end_x, end_y), 5)

@@ -12,5 +12,8 @@ class GyroSim:
         elif keyboard.is_pressed('right'):
             self.heading-=self.heading_increment
     
+    def get_heading(self):
+        return self.heading
+    
     def get_delta_heading(self):
         return self.desired_heading - self.heading
